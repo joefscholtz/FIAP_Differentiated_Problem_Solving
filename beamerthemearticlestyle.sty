@@ -22,9 +22,12 @@
 
 \colorlet{primarycolor}{white}
 \colorlet{invertedprimarycolor}{black}
-\colorlet{secondarycolor}{coolgrey}
+\colorlet{secondarycolor}{lightgrey}
 \colorlet{accentcolor}{cardinalred}
 \colorlet{secondaryaccentcolor}{white}
+
+\colorlet{emailcolor}{secondarycolor}
+\colorlet{headercolor}{coolgrey}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Beamer General Settings
@@ -54,7 +57,7 @@
 \setbeamercolor{institute}{fg=accentcolor}
 
 \setbeamerfont{email}{family=\sourcesanspro}
-\setbeamercolor{email}{fg=secondarycolor}
+\setbeamercolor{email}{fg=emailcolor}
 
 \setbeamerfont{date}{family=\sourcesanspro}
 \setbeamercolor{date}{fg=secondaryaccentcolor}
@@ -100,15 +103,19 @@
 % Custom Title Page Template
 \defbeamertemplate*{title page}{customized}[1][]
 {
-      \setbeamercolor{background canvas}{bg=primarycolor}
+  \begin{minipage}[c]{0.1\textwidth}
+    \text{ }
+  \end{minipage}
+  \begin{minipage}[c]{0.8\textwidth}
+    \setbeamercolor{background canvas}{bg=primarycolor}
 
     \begin{tikzpicture}[remember picture, overlay]
-        \coordinate (CircleCenter) at ([xshift=0, yshift=0cm]current page.center);
+        \coordinate (CircleCenter) at ([xshift=0, yshift=0cm] current page.center);
         
         \fill[fill=primarycolor] (CircleCenter) circle (10cm);
 
         % [fill=colorname!alpha]
-        \fill[fill=secondarycolor!10] (CircleCenter) circle (8cm);
+        \fill[fill=secondarycolor] (CircleCenter) circle (8cm);
         
         \fill[fill=primarycolor] (CircleCenter) circle (6cm);
     \end{tikzpicture}
@@ -119,7 +126,7 @@
         % If toggle is TRUE, show the image
         % \insertinstitute now holds the image path provided by the user
         \begin{figure}
-             \includegraphics[height=2cm]{\instituteLogo} % Adjust height as needed
+            \instituteLogo
         \end{figure}
       }{
         % If toggle is FALSE, show the text (Standard behavior)
@@ -127,9 +134,10 @@
       }
       \bigskip
       \usebeamerfont{title}\usebeamercolor[fg]{title}\textls[100]{\MakeUppercase{\textbf{\inserttitle}}}\par
+      \smallskip
       \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\textls[100]{\textsc{\insertsubtitle}}\par\par
     }
-    \vfill
+    \vspace{8mm}
     \usebeamerfont{author}\usebeamercolor[fg]{author}\textls[100]{\textsc{\insertauthor}}\par
     \smallskip
     {\usebeamercolor[fg]{email}\@email}\par
@@ -140,7 +148,8 @@
         \node[fill=accentcolor, rounded rectangle, minimum width=1.1cm, minimum height=0.6cm] at (0, 0) {\footnotesize{\textbf{\usebeamercolor[fg]{date}{\usebeamerfont{date}{\insertdate}}}}};
       \end{tikzpicture}
     \end{figure}
-    \vspace{-1cm}
+  \end{minipage}
+  \vspace{-1cm}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -179,9 +188,9 @@
 
     \begin{frame}
       \begin{tikzpicture}[remember picture, overlay]
-        \coordinate (CircleCenter) at ([xshift=-7.5cm, yshift=0cm]current page.center);
+        \coordinate (CircleCenter) at ([xshift=-7.5cm, yshift=0cm] current page.center);
 
-        \fill[fill=secondarycolor!10] (CircleCenter) circle (8cm);
+        \fill[fill=secondarycolor] (CircleCenter) circle (8cm);
 
         \fill[fill=primarycolor] (CircleCenter) circle (6cm);
       \end{tikzpicture}
@@ -212,13 +221,13 @@
     \vspace*{-2mm}
     \begin{center}
         \footnotesize
-        \inserttitle
+        \textcolor{headercolor}{\inserttitle}
     \end{center}
     \vspace*{-2mm}
     \begin{minipage}[t]{0.5\textwidth}
       % Logic to handle section vs frame titles
       \vspace{-7mm}
-      \hspace{-5mm}\small{\textcolor{cardinalred}{\faIcon{bars}}}
+      \hspace{-5mm}\small{\textcolor{accentcolor}{\faIcon{bars}}}
 
       \vspace{-1mm}
       \hspace{2mm}\textbf{\large{\insertframetitle}}
@@ -226,10 +235,10 @@
       \ifdefempty{\insertsectionhead}{%
         \text{ }
       }{%
-        \hspace{2mm}\textcolor{cardinalred}{\normalsize{\insertsectionhead}}\ifdefempty{\insertsubsectionhead}{
+        \hspace{2mm}\textcolor{accentcolor}{\normalsize{\insertsectionhead}}\ifdefempty{\insertsubsectionhead}{
           \text{ }
         }{%
-          \textcolor{cardinalred}{\normalsize{: \insertsubsectionhead}}
+          \textcolor{accentcolor}{\normalsize{: \insertsubsectionhead}}
         }
       } 
       
@@ -256,10 +265,10 @@
 
     \begin{frame}
       \begin{tikzpicture}[remember picture, overlay]
-        \coordinate (CircleCenter) at ([xshift=0, yshift=0cm]current page.center);
+        \coordinate (CircleCenter) at ([xshift=0, yshift=0cm] current page.center);
         
         % [fill=colorname!alpha]
-        \fill[fill=secondarycolor!10] (CircleCenter) circle (8cm);
+        \fill[fill=secondarycolor] (CircleCenter) circle (8cm);
         
         \fill[fill=primarycolor] (CircleCenter) circle (6cm);
       \end{tikzpicture}
