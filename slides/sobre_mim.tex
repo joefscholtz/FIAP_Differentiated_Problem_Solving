@@ -1,0 +1,32 @@
+\section{Sobre mim}
+
+\begin{frame}{Eu}
+\end{frame}
+
+{
+  \setbeamercolor{background canvas}{bg=primarycolor}
+  \setbeamercolor{title}{fg=invertedprimarycolor}
+  \setbeamercolor{normal text}{fg=invertedprimarycolor}
+  \setbeamercolor{text normal}{fg=invertedprimarycolor}
+  \setbeamercolor{frametitle}{fg=invertedprimarycolor}
+  \setbeamercolor{headercolor}{fg=invertedprimarycolor}
+  \usebeamercolor[fg]{normal text}
+  \colorlet{headercolor}{white}
+
+  \setbeamertemplate{background}{
+
+  \begin{tikzpicture}[remember picture, overlay]
+    \coordinate (CircleCenter) at ([xshift=-7.5cm, yshift=0cm] current page.center);
+
+    \fill[fill=secondarycolor] (CircleCenter) circle (8cm);
+
+    \fill[fill=primarycolor] (CircleCenter) circle (6cm);
+  \end{tikzpicture}
+  }
+  \begin{frame}{Eu}
+    bb
+  \end{frame}
+}
+
+\begin{frame}{Eu}
+\end{frame}

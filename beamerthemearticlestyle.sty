@@ -103,10 +103,10 @@
 % Custom Title Page Template
 \defbeamertemplate*{title page}{customized}[1][]
 {
-  \begin{minipage}[c]{0.1\textwidth}
+  \begin{minipage}[c]{0.15\textwidth}
     \text{ }
   \end{minipage}
-  \begin{minipage}[c]{0.8\textwidth}
+  \begin{minipage}[c]{0.75\textwidth}
     \setbeamercolor{background canvas}{bg=primarycolor}
 
     \begin{tikzpicture}[remember picture, overlay]
@@ -224,7 +224,7 @@
         \textcolor{headercolor}{\inserttitle}
     \end{center}
     \vspace*{-2mm}
-    \begin{minipage}[t]{0.5\textwidth}
+    \begin{minipage}[t]{0.7\textwidth}
       % Logic to handle section vs frame titles
       \vspace{-7mm}
       \hspace{-5mm}\small{\textcolor{accentcolor}{\faIcon{bars}}}
@@ -243,11 +243,11 @@
       } 
       
     \end{minipage}
-    \begin{minipage}[t]{0.48\textwidth}
+    \begin{minipage}[t]{0.28\textwidth}
       \vspace{-1.25cm}
       \begin{figure}
         \begin{flushright}
-          \includegraphics[height=1.2cm]{\instituteThumb}
+          \hspace*{3.5cm}\includegraphics[height=1.2cm]{\instituteThumb}
         \end{flushright}
       \end{figure}
     \end{minipage}
@@ -262,6 +262,7 @@
     {
     \setbeamercolor{background canvas}{bg=primarycolor}
     \setbeamercolor{title}{fg=invertedprimarycolor}
+    \usebeamercolor[fg]{normal text}
 
     \begin{frame}
       \begin{tikzpicture}[remember picture, overlay]
