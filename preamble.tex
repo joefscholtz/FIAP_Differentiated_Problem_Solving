@@ -1,0 +1,35 @@
+%text
+\usepackage{fontspec} %REQUIRES "xelatex" or "lualatex"
+\usepackage{sourcesanspro}
+\usepackage[T1]{fontenc}
+\usefonttheme{serif}
+\usefonttheme{professionalfonts}
+\usepackage[tracking=true]{microtype}
+
+\usepackage{multirow}
+%color
+\usepackage{xcolor}
+%scientific
+
+%math
+
+%code
+\usepackage{algorithmicx}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+%graphic
+\usepackage{tikz}
+\usepackage[american, cute inductors]{circuitikz} % Circuitos
+%macros
+\usepackage{etoolbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Reference (biblatex) settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[style=verbose,backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+\setbeamerfont{footnote}{size=\tiny}
+\setbeamertemplate{bibliography item}{}% Remove reference icon.
+\renewcommand*{\bibfont}{\footnotesize}
+
+\usetheme{articlestyle}
