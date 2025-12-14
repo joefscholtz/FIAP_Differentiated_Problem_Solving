@@ -28,9 +28,90 @@
 %math
 
 %code
+\usepackage{listings}
 \usepackage{algorithmicx}
 \usepackage{algorithm}
 \usepackage[noend]{algpseudocode}
+\renewcommand{\lstlistingname}{Code}
+% --- Frappe (Dark) ---
+\definecolor{cFrappeBase}{HTML}{303446}
+\definecolor{cFrappeText}{HTML}{C6D0F5}
+\definecolor{cFrappeMauve}{HTML}{CA9EE6} % Keywords
+\definecolor{cFrappeBlue}{HTML}{8CAAEE}  % Functions
+\definecolor{cFrappeGreen}{HTML}{A6D189} % Strings
+\definecolor{cFrappePeach}{HTML}{EF9F76} % Numbers/Booleans
+\definecolor{cFrappeOverlay}{HTML}{737994} % Comments
+\definecolor{cFrappeRed}{HTML}{E78284}   % Errors/Exceptions
+
+% --- Latte (Light) ---
+\definecolor{cLatteBase}{HTML}{EFF1F5}
+\definecolor{cLatteText}{HTML}{4C4F69}
+\definecolor{cLatteMauve}{HTML}{8839EF} % Keywords
+\definecolor{cLatteBlue}{HTML}{1E66F5}  % Functions
+\definecolor{cLatteGreen}{HTML}{40A02B} % Strings
+\definecolor{cLattePeach}{HTML}{FE640B} % Numbers/Booleans
+\definecolor{cLatteOverlay}{HTML}{9CA0B0} % Comments
+\definecolor{cLatteRed}{HTML}{D20F39}   % Errors/Exceptions
+
+% ==================================================================
+% LSTDEFINES
+% ==================================================================
+
+% Style 1: Catppuccin Frappe (Dark Mode)
+\lstdefinestyle{catppuccin-frappe}{
+    language=Python,
+    backgroundcolor=\color{cFrappeBase},
+    basicstyle=\ttfamily\color{cFrappeText}\footnotesize,
+    keywordstyle=\color{cFrappeMauve}\bfseries,
+    stringstyle=\color{cFrappeGreen},
+    commentstyle=\color{cFrappeOverlay}\itshape,
+    identifierstyle=\color{cFrappeText},
+    numberstyle=\color{cFrappeOverlay},
+    % Specific identifiers for Python
+    emph={self, cls, @classmethod, @staticmethod},
+    emphstyle=\color{cFrappeRed}\itshape,
+    % Function names (imperfect in listings, but helps)
+    emph={[2]__init__, __str__, print, len, range},
+    emphstyle={[2]\color{cFrappeBlue}},
+    % Formatting
+    frame=single,
+    rulecolor=\color{cFrappeOverlay},
+    numbers=left,
+    numbersep=5pt,
+    showstringspaces=false,
+    upquote=true,
+    breaklines=true,
+    tabsize=4,
+    captionpos=b
+}
+
+% Style 2: Catppuccin Latte (Light Mode)
+\lstdefinestyle{catppuccin-latte}{
+    language=Python,
+    backgroundcolor=\color{cLatteBase},
+    basicstyle=\ttfamily\color{cLatteText}\footnotesize,
+    keywordstyle=\color{cLatteMauve}\bfseries,
+    stringstyle=\color{cLatteGreen},
+    commentstyle=\color{cLatteOverlay}\itshape,
+    identifierstyle=\color{cLatteText},
+    numberstyle=\color{cLatteOverlay},
+    % Specific identifiers
+    emph={self, cls, @classmethod, @staticmethod},
+    emphstyle=\color{cLatteRed}\itshape,
+    % Standard functions
+    emph={[2]__init__, __str__, print, len, range},
+    emphstyle={[2]\color{cLatteBlue}},
+    % Formatting
+    frame=single,
+    rulecolor=\color{cLatteOverlay},
+    numbers=left,
+    numbersep=5pt,
+    showstringspaces=false,
+    upquote=true,
+    breaklines=true,
+    tabsize=4,
+    captionpos=b
+}
 %graphic
 \usepackage{tikz}
 \usepackage[american, cute inductors]{circuitikz} % Circuitos

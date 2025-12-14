@@ -2,6 +2,17 @@ import numpy as np
 
 
 def calculate_riemann_sum(data_list, dt):
+    integral_result = []
+    current_area = 0.0
+    for velocity_value in data_list:
+        rectangle_area = velocity_value * dt
+        current_area += rectangle_area
+        integral_result.append(current_area)
+
+    return integral_result
+
+
+def calculate_riemann_sum2(data_list, dt):
     """
     Computes the integral using a standard Python loop.
     This demonstrates the concept of 'Accumulation'.
