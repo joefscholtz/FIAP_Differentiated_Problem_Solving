@@ -36,19 +36,26 @@ def main():
     print(f"Calculated Dist:   {estimated_position[-1]:.2f} m")
     print(f"Final Error:       {error:.2f} m")
 
-    # 5. Visualization with Fixed Aspect Ratio
-    # 16:9 Ratio = (10, 5.625) or (16, 9)
-    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 5.625), dpi=100)
+    # 5. Visualization
+    # Create figure 1 with 16:9 aspect ratio
+    fig1, ax1 = plt.subplots(figsize=(10, 5.625), dpi=100)
 
-    # Plot 1: Velocity
     ax1.plot(t, true_velocity, "g--", linewidth=2, label="True Velocity (Ideal)")
     ax1.plot(t, measured_velocity, "r-", alpha=0.6, label="Sensor Reading (Noisy)")
     ax1.set_title("Input: Velocity Data (Derivative)")
     ax1.set_ylabel("Velocity (m/s)")
+    # Added X-label here since it's now a standalone plot
+    ax1.set_xlabel("Time (s)")
     ax1.legend(loc="upper right")
     ax1.grid(True, alpha=0.3)
 
-    # Plot 2: Position
+    fig1.tight_layout()
+    file1 = "velocity_plot.png"
+    fig1.savefig(file1, dpi=300)
+
+    # Create figure 2 with 16:9 aspect ratio
+    fig2, ax2 = plt.subplots(figsize=(10, 5.625), dpi=100)
+
     ax2.plot(t, true_position, "g--", linewidth=2, label="True Position")
     ax2.plot(t, estimated_position, "b-", linewidth=2, label="Computed Position")
     ax2.fill_between(
@@ -65,13 +72,14 @@ def main():
     ax2.legend(loc="lower right")
     ax2.grid(True, alpha=0.3)
 
-    plt.tight_layout()
+    fig2.tight_layout()
 
-    # Save the figure
-    filename = "simulation_result.png"
-    plt.savefig(filename, dpi=300)
-    print(f"Plot saved as {filename}")
+    # Save Figure 2
+    file2 = "position_plot.png"
+    fig2.savefig(file2, dpi=300)
+    print(f"Saved {file2}")
 
+    # This will now pop up two separate windows
     plt.show()
 
 
