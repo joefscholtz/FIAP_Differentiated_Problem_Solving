@@ -9,7 +9,7 @@
 *.zip
 *.tar
 *.rar
-*.bcf
+*.bcf*
 *.nav
 *.run.xml
 *.snm
@@ -17,5 +17,6 @@
 *.vrb
 *.bbl
 *.blg
+*.synctex*
 svg-inkscape
 */__pycache__

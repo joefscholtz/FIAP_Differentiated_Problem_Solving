@@ -6,11 +6,24 @@
 \usefonttheme{professionalfonts}
 \usepackage[tracking=true]{microtype}
 
+\usepackage[brazilian]{babel}
+
 \usepackage{multirow}
 \usepackage{array}
 %color
 \usepackage{xcolor}
 %scientific
+\usepackage{siunitx}
+\sisetup{
+    output-decimal-marker = {,},   % Use comma for decimals (3,14)
+    group-separator = {.},         % Use dot for thousands (1.000)
+    group-minimum-digits = 4,      % Forces grouping for 1000 (standard is usually 5 digits)
+    list-final-separator = { e },  % "1, 2 e 3" instead of "and"
+    list-pair-separator = { e },   % "1 e 2"
+    range-phrase = { a },          % "10 a 20" instead of "to"
+    exponent-product = \cdot,      % Uses dot (3 . 10^3) instead of x
+    inter-unit-product = \ensuremath{{}\cdot{}} % Dot between units (N.m)
+}
 
 %math
 
@@ -21,6 +34,16 @@
 %graphic
 \usepackage{tikz}
 \usepackage[american, cute inductors]{circuitikz} % Circuitos
+\usepackage{pgfplots}
+
+\pgfplotsset{compat=1.18}
+
+\pgfplotsset{
+    /pgf/number format/.cd,
+    use comma,
+    1000 sep={.}
+}
+
 %macros
 \usepackage{etoolbox}
 

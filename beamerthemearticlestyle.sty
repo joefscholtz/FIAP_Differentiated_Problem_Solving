@@ -80,6 +80,14 @@
     \insertframenumber/\inserttotalframenumber
 }
 
+\setbeamertemplate{caption}[numbered]
+\RequirePackage{caption}
+\captionsetup{
+    labelsep=colon,      % Adds the colon ":" after the number
+    labelfont={bf, small}, % Make "Figura 1" Bold and Small
+    textfont={small}     % Make the caption text Small
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Title Page
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

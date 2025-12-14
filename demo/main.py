@@ -40,11 +40,10 @@ def main():
     # Increase base font size for everything (ticks, labels, legends)
     plt.rcParams.update({"font.size": 20})
     # specific settings for titles if you want them even bigger
-    plt.rcParams.update({"axes.titlesize": 20})
-    plt.rcParams.update({"axes.labelsize": 20})
+    plt.rcParams.update({"axes.labelsize": 25})
 
     # Create figure 1 with 16:9 aspect ratio
-    fig1, ax1 = plt.subplots(figsize=(10, 5.625), dpi=100)
+    fig1, ax1 = plt.subplots(figsize=(10, 6), dpi=100)
 
     ax1.plot(t, true_velocity, "g--", linewidth=8, label="Velocidade real")
     ax1.plot(
@@ -57,7 +56,7 @@ def main():
     )
     ax1.set_ylabel("Velocidade (m/s)")
     ax1.set_xlabel("Tempo (s)")
-    ax1.legend(loc="upper right")
+    ax1.legend(loc="best")
     ax1.grid(True, alpha=0.3)
 
     fig1.tight_layout()
@@ -68,7 +67,7 @@ def main():
     fig2, ax2 = plt.subplots(figsize=(10, 5.625), dpi=100)
 
     ax2.plot(t, true_position, "g--", linewidth=6, label="Posição real")
-    ax2.plot(t, estimated_position, "b-", linewidth=6, label="Velocidade calculada")
+    ax2.plot(t, estimated_position, "b-", linewidth=6, label="Posição calculada")
     ax2.fill_between(
         t,
         estimated_position,
@@ -79,7 +78,7 @@ def main():
     )
     ax2.set_ylabel("Posição (m)")
     ax2.set_xlabel("Tempo (s)")
-    ax2.legend(loc="lower right")
+    ax2.legend(loc="best")
     ax2.grid(True, alpha=0.3)
 
     fig2.tight_layout()

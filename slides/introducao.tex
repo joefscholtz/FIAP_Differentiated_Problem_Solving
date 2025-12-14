@@ -1,7 +1,7 @@
 \section{Introdução}
 
 \begin{frame}{Cenário de exemplo}
-  Imagine que temos um carro autônomo. Seu GPS quebrou. Tudo o que temos é um sensor de velocidade que lê a cada 0,1 segundos. Como é possível calcular a distância percorrida?
+  Imagine que temos um carro autônomo. Seu GPS quebrou. Tudo o que temos é um sensor de velocidade que lê a cada \qty{0.1}{\second} com precisão de \qty[per-mode = symbol]{0.2}{\metre\per\second}. Como é possível calcular a distância percorrida?
   \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{demo/results/velocity_plot.png}
@@ -11,7 +11,15 @@
 \end{frame}
 
 \begin{frame}{Análise teórica}
+  Lembre-se de que a velocidade é a derivada da posição:
+  \begin{equation*}
+    v(t) = \frac{dx}{dt}
+  \end{equation*}
 
-  Math Connection:Recall that $v(t) = \frac{dx}{dt}$ (Derivative).Therefore, distance is the area under the velocity curve: $\Delta x = \int_{t_0}^{t_f} v(t) dt$ (Fundamental Theorem of Calculus).
+  Dessa forma, a distância é dada pela área abaixo da curva. Então, pelo \textbf{Teorema Fundamental do Cálculo}, obtemos: 
+
+  \begin{equation*}
+    \Delta x = \int_{t_0}^{t_f} v(t) dt
+  \end{equation*}
 \end{frame}
 
