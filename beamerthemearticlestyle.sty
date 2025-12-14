@@ -69,8 +69,10 @@
 % Initialize @email to avoid errors if user doesn't define it
 \def\@email{} 
 \newcommand{\email}[1]{\def\@email{\texttt{\MakeLowercase{\textls[10]{#1}}}}}
+\newcommand{\insertemail}{\@email}
 
 % Navigation Symbols (Adding page numbers)
+\setbeamertemplate{navigation symbols}{}
 \addtobeamertemplate{navigation symbols}{}{%
     \usebeamerfont{footline}%
     \usebeamercolor[fg]{footline}%
@@ -110,7 +112,7 @@
     \setbeamercolor{background canvas}{bg=primarycolor}
 
     \begin{tikzpicture}[remember picture, overlay]
-        \coordinate (CircleCenter) at ([xshift=0, yshift=0cm] current page.center);
+        \coordinate (CircleCenter) at ([xshift=0cm, yshift=0cm] current page.center);
         
         \fill[fill=primarycolor] (CircleCenter) circle (10cm);
 
@@ -266,7 +268,7 @@
 
     \begin{frame}
       \begin{tikzpicture}[remember picture, overlay]
-        \coordinate (CircleCenter) at ([xshift=0, yshift=0cm] current page.center);
+        \coordinate (CircleCenter) at ([xshift=0cm, yshift=0cm] current page.center);
         
         % [fill=colorname!alpha]
         \fill[fill=secondarycolor] (CircleCenter) circle (8cm);

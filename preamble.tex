@@ -7,6 +7,7 @@
 \usepackage[tracking=true]{microtype}
 
 \usepackage{multirow}
+\usepackage{array}
 %color
 \usepackage{xcolor}
 %scientific
@@ -33,3 +34,16 @@
 \renewcommand*{\bibfont}{\footnotesize}
 
 \usetheme{articlestyle}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Custom commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\trig}{\faAngleRight\hspace{1mm}}
+\newcommand{\mycvitem}[4]{
+    \begin{center}
+        \begin{tabular}{p{0.15\textwidth} p{0.001\textwidth} !{\vrule width 2pt} p{0.001\textwidth} p{0.68\textwidth} } 
+          \centering #1& & & \footnotesize{\textbf{#2}} \fontsize{8}{8}{\textcolor{invertedprimarycolor}{\textit{(#3)}}} \newline\fontsize{8}{8}{\trig #4} \normalsize\\ 
+        \end{tabular}
+    \end{center}
+}
