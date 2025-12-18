@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from math_utils import calculate_riemann_sum  # Import your new function
+from math_utils import calculate_riemann_sum
 
 
 def main():

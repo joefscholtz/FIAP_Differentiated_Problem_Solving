@@ -4,8 +4,8 @@ import numpy as np
 def calculate_riemann_sum(data_list, dt):
     integral_result = []
     current_area = 0.0
-    for velocity_value in data_list:
-        rectangle_area = velocity_value * dt
+    for value in data_list:
+        rectangle_area = value * dt
         current_area += rectangle_area
         integral_result.append(current_area)
 
